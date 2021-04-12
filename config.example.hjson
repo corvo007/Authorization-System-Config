@@ -1,0 +1,161 @@
+{
+// 前言
+
+  //本配置文件采用hjson,具体语法和介绍可参见https://hjson.github.io/,或者可以参考本文件
+  //请先把本文件复制一份重命名为config.hjson后再编辑,每一项都是必填的
+  //如果格式不正确读取时会自动用默认配置(本文件)覆盖
+
+// 数据库设置
+
+  // 数据库主机
+  MySQL_host:example.com
+  // 数据库端口
+  MySQL_port:3306
+  // 数据库用户名
+  MySQL_username:example
+  // 数据库用户密码
+  MySQL_password:example
+  // 数据库名
+  MySQL_database:example
+
+// 授权Bot组及分组功能设置
+
+  auth_class:
+  {
+
+    // key: 分组英文名, 用于存储在数据库中和记录日志, 一经定下不能轻易修改, 除非运行迁移脚本migrate.py
+    combine_example:
+    {
+          // zh_name: 中文名, 显示给用户,可以随意修改
+          zh_name: 示例
+
+          // type: Bot组的类型: combine: 组合分组, single: 独立分组
+          type: combine
+
+          // contains: 包含的BotQQ号(single)或者分组(combine)(示例见本组和下一组)
+          contains:
+          [
+            example1
+            example2
+          ]
+    }
+    single_example:
+    {
+          zh_name: 示例
+
+          type: single
+
+          contains:
+          [
+            10086
+            10087
+          ]
+
+          // enable_auth_check:启用授权检查
+          enable_auth_check: True
+
+          // enable_group_leaving: 启用到期后自动退群
+          enable_group_leaving: True
+
+          // remind_before_expired: 到期前几天开始提醒(设为0则不提醒)
+          remind_before_expired: 2
+
+          // allow_make_friends: 允许加好友
+          allow_make_friends: True
+
+          // leave_after_expired: 过期后多久退群(天)(没有授权的群始终是即时退群)
+          leave_after_expired: 1
+
+          // allow_members_num: 允许群中的最大人数
+          allow_members_num: 3000
+
+          // self_group_maximum: 本机允许的最多群数
+          self_group_maximum: 50
+
+          // reject_if_reach_group_limit: 如果群数达到了"self_group_maximum"是否拒绝入群
+          // (大于50人的群拒绝入群;小于50人的群退出, 仅对新群有效)
+          reject_if_reach_group_limit: True
+    }
+
+  }
+
+// 全局功能设置
+
+  // 检查频率(小时, 自零点始, 每隔X小时检查一次)
+  check_frequency: 6
+  // 授权码过期时间(分钟)
+  transfer_code_expires_time: 10
+  // 更新Bot群信息间隔(分钟, 自Bot启动起每隔X分钟更新一次)
+  update_bot_info_frequency: 60
+  // 是否与其他端同步配置
+  enable_sync: True
+
+// 提示语设置
+
+  // 私聊帮助消息
+  private_help_msg:
+    '''
+
+
+    '''
+
+  // 群聊帮助消息
+  group_help_msg:
+    '''
+
+
+    '''
+
+  // 维护组的联系信息(如:无授权,请联系维护组: <此处插入下方信息>)
+  contact_us_msg:
+    '''
+
+
+    '''
+
+  // 加入一个新群的时候提示语, 可用变量:
+  // <version>: 所涉及分组
+  new_entering_group_msg:
+    '''
+
+
+    '''
+
+  // 离开群时的提示语, 可用变量:
+  // <reason>: 原因
+  // <version> : 所涉及分组
+  leaving_group_msg:
+    '''
+
+
+    '''
+
+  // 过期时的提示语(如果开启了退群则会发送上方的提示语),可用变量:
+  // <expired_time>: 当前群过期时间
+  // <version>: 所涉及分组
+  expired_remind_msg:
+    '''
+
+
+    '''
+
+  // 快过期时的提示语, 可用变量:
+  // <expired_time>: 当前群过期时间
+  // <version>: 所涉及分组
+  near_expired_remind_msg:
+    '''
+
+
+    '''
+
+  // 手动变更授权时提示语, 可用变量:
+  // <reason>: 原因
+  // <change_time>: 变更时间
+  // <expired_time>: 当前群过期时间
+  // <version> : 所涉及分组
+  recoup_remind_msg:
+    '''
+
+
+    '''
+}

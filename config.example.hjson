@@ -8,28 +8,29 @@
 // 数据库设置
 
   // 数据库主机
-  MySQL_host:example.com
+  MySQL_host: example.com
   // 数据库端口
-  MySQL_port:3306
+  MySQL_port: 3306
   // 数据库用户名
-  MySQL_username:example
+  MySQL_username: example
   // 数据库用户密码
-  MySQL_password:example
+  MySQL_password: example
   // 数据库名
-  MySQL_database:example
+  MySQL_database: example
 
 // 授权Bot组及分组功能设置
 
   auth_class:
   {
 
-    // key: 分组英文名, 用于存储在数据库中和记录日志, 一经定下不能轻易修改, 除非运行迁移脚本migrate.py
+    // key: 分组英文名, 用于存储在数据库中和记录日志, 一经定下不能轻易修改, 除非运行迁移脚本maintenance.py
     combine_example:
     {
           // zh_name: 中文名, 显示给用户,可以随意修改
           zh_name: 示例
 
           // type: Bot组的类型: combine: 组合分组, single: 独立分组
+          // 请注意:组合分组的配置仅包括这四项
           type: combine
 
           // contains: 包含的BotQQ号(single)或者分组(combine)(示例见本组和下一组)
@@ -75,6 +76,34 @@
           // reject_if_reach_group_limit: 如果群数达到了"self_group_maximum"是否拒绝入群
           // (大于50人的群拒绝入群;小于50人的群退出, 仅对新群有效)
           reject_if_reach_group_limit: True
+
+          // 促销活动(买赠活动)
+          promotions:
+          [
+
+          // 老用户同时满足全部用户优惠和老用户优惠会优先适用老用户优惠(不会真有老客户连新用户和狗都比不上吧?)
+
+            {
+            // 目标:new_user(新客户),all(所有客户),old(老客户)
+            target: new_user
+
+            // 先决条件:仅对target为old时有效,表示累计使用多少天以上的有资格
+            precondition: 0
+
+            // 优惠描述
+            // 可用变量:
+            // <discount> : 折扣值(5%/5)
+            description: example
+
+            // 折扣值: 5%代表多赠5%的时间,为纯数字代表赠送的天数
+            discount: 5
+
+            // 结束时间:按照YYYY/MM/DD格式填写,填"infinite"代表长期
+            end_time: infinite
+
+            }
+
+          ]
     }
 
   }
@@ -89,6 +118,8 @@
   update_bot_info_frequency: 60
   // 是否与其他端同步配置
   enable_sync: True
+  // 单次检查时将要退出的群的数量达到此值以上时通知管理员
+  notify_if_leave_groups_over: 20
 
 // 提示语设置
 
@@ -114,7 +145,7 @@
     '''
 
   // 加入一个新群的时候提示语, 可用变量:
-  // <version>: 所涉及分组
+  // <version> : 所涉及分组
   new_entering_group_msg:
     '''
 
@@ -122,7 +153,7 @@
     '''
 
   // 离开群时的提示语, 可用变量:
-  // <reason>: 原因
+  // <reason> : 原因
   // <version> : 所涉及分组
   leaving_group_msg:
     '''
@@ -131,8 +162,8 @@
     '''
 
   // 过期时的提示语(如果开启了退群则会发送上方的提示语),可用变量:
-  // <expired_time>: 当前群过期时间
-  // <version>: 所涉及分组
+  // <expired_time> : 当前群过期时间
+  // <version> : 所涉及分组
   expired_remind_msg:
     '''
 
@@ -140,8 +171,8 @@
     '''
 
   // 快过期时的提示语, 可用变量:
-  // <expired_time>: 当前群过期时间
-  // <version>: 所涉及分组
+  // <expired_time> : 当前群过期时间
+  // <version> : 所涉及分组
   near_expired_remind_msg:
     '''
 
@@ -149,11 +180,21 @@
     '''
 
   // 手动变更授权时提示语, 可用变量:
-  // <reason>: 原因
-  // <change_time>: 变更时间
-  // <expired_time>: 当前群过期时间
-  // <version> : 所涉及分组
+  // <reason> : 原因
+  // <change_time> : 变更时间
+  // <expired_time> : 当前群过期时间
+  // <version>  : 所涉及分组
   recoup_remind_msg:
+    '''
+
+
+    '''
+
+  // 转移授权时新群的提示语, 可用变量:
+  // <reason> : 原因
+  // <expired_time> : 当前群过期时间
+  // <version>  : 所涉及分组
+  transfer_remind_msg:
     '''
 
 

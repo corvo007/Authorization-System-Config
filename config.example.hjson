@@ -115,104 +115,94 @@
   // 提示语设置
 
   // 私聊帮助消息(用户)
-  private_user_help_msg: ''
-  '
+  private_user_help_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 群聊帮助消息(用户)
-  group_user_help_msg: ''
-  '
+  group_user_help_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 私聊帮助消息(维护组)
-  private_admin_help_msg: ''
-  '
+  private_admin_help_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 群聊帮助消息(维护组)
-  group_admin_help_msg: ''
-  '
+  group_admin_help_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 维护组的联系信息(如:无授权,请联系维护组: <此处插入下方信息>)
-  contact_us_msg: ''
-  '
+  contact_us_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 加入一个新群的时候提示语, 可用变量:
   // <version> : 所涉及分组
-  new_entering_group_msg: ''
-  '
+  new_entering_group_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 离开群时的提示语, 可用变量:
   // <reason> : 原因
   // <version> : 所涉及分组
-  leaving_group_msg: ''
-  '
+  leaving_group_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 过期时的提示语(如果开启了退群则会发送上方的提示语),可用变量:
   // <expired_time> : 当前群过期时间
   // <version> : 所涉及分组
-  expired_remind_msg: ''
-  '
+  expired_remind_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 快过期时的提示语, 可用变量:
   // <expired_time> : 当前群过期时间
   // <version> : 所涉及分组
-  near_expired_remind_msg: ''
-  '
+  near_expired_remind_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 手动变更授权时提示语, 可用变量:
   // <reason> : 原因
   // <change_time> : 变更时间
   // <expired_time> : 当前群过期时间
   // <version>  : 所涉及分组
-  recoup_remind_msg: ''
-  '
+  recoup_remind_msg: 
+  '''
 
 
-  ''
-  '
+  '''
 
   // 转移授权时新群的提示语, 可用变量:
   // <reason> : 原因
   // <expired_time> : 当前群过期时间
   // <version>  : 所涉及分组
-  transfer_remind_msg: ''
-  '
+  transfer_remind_msg: 
+  '''
 
 
-  ''
-  '
+  '''
+
 }

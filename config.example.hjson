@@ -125,15 +125,29 @@
 
 // 提示语设置
 
-  // 私聊帮助消息
-  private_help_msg:
+  // 私聊帮助消息(用户)
+  private_user_help_msg:
     '''
 
 
     '''
 
-  // 群聊帮助消息
-  group_help_msg:
+  // 群聊帮助消息(用户)
+  group_user_help_msg:
+    '''
+
+
+    '''
+
+  // 私聊帮助消息(维护组)
+  private_admin_help_msg:
+    '''
+
+
+    '''
+
+  // 群聊帮助消息(维护组)
+  group_admin_help_msg:
     '''
 
 

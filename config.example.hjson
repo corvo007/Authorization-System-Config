@@ -71,6 +71,9 @@
       // (大于50人的群拒绝入群;小于50人的群退出, 仅对新群有效)
       reject_if_reach_group_limit: True
 
+      // 允许同组的不同Bot在同群中
+      allow_duplicate_bot: False
+
       // 促销活动(买赠活动)
       promotions: [
         // 单个组同时满足多项优惠的话会适用在此处顺序较前的

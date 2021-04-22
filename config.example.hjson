@@ -9,34 +9,42 @@
 
   // 数据库主机
   MySQL_host: example.com
+
   // 数据库端口
   MySQL_port: 3306
+
   // 数据库用户名
   MySQL_username: example
+
   // 数据库用户密码
   MySQL_password: example
+  
   // 数据库名
   MySQL_database: example
 
   // 授权Bot组及分组功能设置
 
   auth_class: {
-    // key: 分组英文名, 用于存储在数据库中和记录日志, 一经定下不能轻易修改, 除非运行迁移脚本maintenance.py
+
+    // 分组英文名, 用于存储在数据库中和记录日志, 一经定下不能轻易修改, 除非运行迁移脚本maintenance.py
     combine_example: {
-      // zh_name: 中文名, 显示给用户,可以随意修改
+
+      // 中文名, 显示给用户,可以随意修改
       zh_name: 示例
 
-      // type: Bot组的类型: combine: 组合分组, single: 独立分组
+      // Bot组的类型: combine: 组合分组, single: 独立分组
       // 请注意:组合分组的配置仅包括这四项
       type: combine
 
-      // contains: 包含的BotQQ号(single)或者分组(combine)(示例见本组和下一组)
+      // 包含的BotQQ号(single)或者分组(combine)(示例见本组和下一组)
       contains: [
         example1
         example2
       ]
     }
+
     single_example: {
+
       zh_name: 示例
 
       type: single
@@ -46,28 +54,28 @@
         10087
       ]
 
-      // enable_auth_check:启用授权检查
+      // 启用授权检查
       enable_auth_check: True
 
-      // enable_group_leaving: 启用到期后自动退群
+      // 启用到期后自动退群
       enable_group_leaving: True
 
-      // remind_before_expired: 到期前几天开始提醒(设为0则不提醒)
+      // 到期前几天开始提醒(设为0则不提醒)
       remind_before_expired: 2
 
-      // allow_make_friends: 允许加好友
+      // 允许加好友
       allow_make_friends: True
 
-      // leave_after_expired: 过期后多久退群(天)(没有授权的群始终是即时退群)
+      // 过期后多久退群(天)(没有授权的群始终是即时退群)
       leave_after_expired: 1
 
-      // allow_members_num: 允许群中的最大人数
+      // 允许群中的最大人数
       allow_members_num: 3000
 
-      // self_group_maximum: 本机允许的最多群数
+      // 本机允许的最多群数
       self_group_maximum: 50
 
-      // reject_if_reach_group_limit: 如果群数达到了"self_group_maximum"是否拒绝入群
+      // 如果群数达到了"self_group_maximum"是否拒绝入群
       // (大于50人的群拒绝入群;小于50人的群退出, 仅对新群有效)
       reject_if_reach_group_limit: True
 

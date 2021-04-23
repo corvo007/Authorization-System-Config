@@ -82,6 +82,12 @@
       // 允许同组的不同Bot在同群中
       allow_duplicate_bot: False
 
+      // 不接受新群的Bot
+      disable_bots:[
+        100000,
+        100001
+      ]
+
       // 促销活动(买赠活动)
       promotions: [
         // 单个组同时满足多项优惠的话会适用在此处顺序较前的
